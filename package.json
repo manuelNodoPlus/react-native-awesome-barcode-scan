@@ -1,0 +1,69 @@
+{
+  "_args": [
+    [
+      "git+https://github.com/manuelNodoPlus/react-native-barcode-scan.git",
+      "C:\\Users\\manue\\Tibasosa\\TibaPlusApp"
+    ]
+  ],
+  "_from": "git+https://github.com/manuelNodoPlus/react-native-barcode-scan.git",
+  "_id": "react-native-awesome-barcode-scan@git+https://github.com/manuelNodoPlus/react-native-barcode-scan.git#5d84d9491f46c4206ec66fe6d310ea0d993452a8",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/react-native-awesome-barcode-scan",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "git+https://github.com/manuelNodoPlus/react-native-barcode-scan.git",
+    "rawSpec": "git+https://github.com/manuelNodoPlus/react-native-barcode-scan.git",
+    "saveSpec": "git+https://github.com/manuelNodoPlus/react-native-barcode-scan.git",
+    "fetchSpec": "https://github.com/manuelNodoPlus/react-native-barcode-scan.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/manuelNodoPlus/react-native-barcode-scan.git#5d84d9491f46c4206ec66fe6d310ea0d993452a8",
+  "_spec": "git+https://github.com/manuelNodoPlus/react-native-barcode-scan.git",
+  "_where": "C:\\Users\\manue\\Tibasosa\\TibaPlusApp",
+  "author": {
+    "name": "Your Name",
+    "email": "yourname@email.com"
+  },
+  "bugs": {
+    "url": "https://github.com/github_account/react-native-awesome-barcode-scan/issues"
+  },
+  "description": "TODO",
+  "devDependencies": {
+    "react": "^16.9.0",
+    "react-native": "^0.61.5"
+  },
+  "files": [
+    "README.md",
+    "android",
+    "index.js",
+    "ios",
+    "react-native-awesome-barcode-scan.podspec"
+  ],
+  "homepage": "https://github.com/github_account/react-native-awesome-barcode-scan#readme",
+  "keywords": [
+    "react-native"
+  ],
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "main": "index.js",
+  "name": "react-native-awesome-barcode-scan",
+  "peerDependencies": {
+    "react": "^16.8.1",
+    "react-native": ">=0.60.0-rc.0 <1.0.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/github_account/react-native-awesome-barcode-scan.git",
+    "baseUrl": "https://github.com/github_account/react-native-awesome-barcode-scan"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "title": "React Native Awesome Barcode Scan",
+  "version": "1.0.0"
+}
