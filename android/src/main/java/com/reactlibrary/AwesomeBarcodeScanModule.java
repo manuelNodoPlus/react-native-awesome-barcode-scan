@@ -48,10 +48,10 @@ public class AwesomeBarcodeScanModule extends ReactContextBaseJavaModule impleme
         ReactApplicationContext context = getReactApplicationContext();
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(scanResult != null) {
-            System.out.println(scanResult.toString().replaceAll("[^A-Za-z0-9-]+", " "));
+            System.out.println(scanResult.toString().replaceAll("[^A-Za-z0-9_]+", " "));
 //            Log.i("SCAN", "scan result: " + scanResult.toString().replaceAll("[-!$%^&*()_+|~=`{}\\[\\]:\";'<>?,.\\/]"," ") + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaoooooooooooooooooooooo");
 
-            this.promise.resolve(scanResult.toString().replaceAll("[^A-Za-z0-9-]+", " "));
+            this.promise.resolve(scanResult.toString().replaceAll("[^A-Za-z0-9_]+", " "));
 
         } else
             Log.e("SCAN", "Sorry, the scan was unsuccessful...");
