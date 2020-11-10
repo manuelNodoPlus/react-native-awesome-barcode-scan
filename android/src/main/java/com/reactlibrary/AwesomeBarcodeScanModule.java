@@ -38,6 +38,8 @@ public class AwesomeBarcodeScanModule extends ReactContextBaseJavaModule impleme
 //        // TODO: Implement some actually useful functionality
 //        callback.invoke("Received numberArgument: " + numberArgument + " stringArgument: " + stringArgument);
         IntentIntegrator intentIntegrator = new IntentIntegrator(context.getCurrentActivity());
+        intentIntegrator.setPrompt("Pon el código de barras dentro del rectángulo de escaneo.");
+        intentIntegrator.setOrientationLocked(false);
         intentIntegrator.initiateScan();
     }
 
@@ -48,6 +50,7 @@ public class AwesomeBarcodeScanModule extends ReactContextBaseJavaModule impleme
         if(scanResult != null) {
             System.out.println(scanResult.toString().replaceAll("[^A-Za-z0-9]+", " "));
 //            Log.i("SCAN", "scan result: " + scanResult.toString().replaceAll("[-!$%^&*()_+|~=`{}\\[\\]:\";'<>?,.\\/]"," ") + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaoooooooooooooooooooooo");
+
             this.promise.resolve(scanResult.toString().replaceAll("[^A-Za-z0-9]+", " "));
 
         } else
