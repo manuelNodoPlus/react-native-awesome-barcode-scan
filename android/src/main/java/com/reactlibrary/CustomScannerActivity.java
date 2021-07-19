@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ToggleButton;
 
@@ -30,7 +31,7 @@ public class CustomScannerActivity extends Activity implements
         barcodeScannerView = (CompoundBarcodeView)findViewById(R.id.zxing_barcode_scanner);
         barcodeScannerView.setTorchListener(this);
 
-        switchFlashlightButton = (ToggleButton)findViewById(R.id.switch_flashlight);
+        switchFlashlightButton = (ToggleButton) findViewById(R.id.switch_flashlight);
 
         switchFlashlightButton.setText(null);
         switchFlashlightButton.setTextOn(null);
