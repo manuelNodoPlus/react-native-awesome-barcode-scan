@@ -46,7 +46,7 @@ public class AwesomeBarcodeScanModule extends ReactContextBaseJavaModule impleme
     }
 
     @Override
-    public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         ReactApplicationContext context = getReactApplicationContext();
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(scanResult != null) {
@@ -58,14 +58,5 @@ public class AwesomeBarcodeScanModule extends ReactContextBaseJavaModule impleme
         } else
             Log.e("SCAN", "Sorry, the scan was unsuccessful...");
     }
-
-    @Override
-    public void onNewIntent(Intent intent) {
-
-    }
-
-    @Override
-    public void onActivityResult(int i, int i1, Intent intent) {
-
-    }
+    
 }
