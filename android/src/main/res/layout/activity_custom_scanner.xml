@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CustomScannerActivity">
+    tools:context="com.reactlibrary.CustomScannerActivity">
 
     <com.journeyapps.barcodescanner.CompoundBarcodeView
         android:id="@+id/zxing_barcode_scanner"
