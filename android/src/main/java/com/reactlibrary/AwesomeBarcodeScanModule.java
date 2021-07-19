@@ -37,16 +37,16 @@ public class AwesomeBarcodeScanModule extends ReactContextBaseJavaModule impleme
         context.addActivityEventListener(this);
 //        // TODO: Implement some actually useful functionality
 //        callback.invoke("Received numberArgument: " + numberArgument + " stringArgument: " + stringArgument);
-        IntentIntegrator intentIntegrator = new IntentIntegrator(getCurrentActivity());
-        intentIntegrator.setOrientationLocked(false).setCaptureActivity(CustomScannerActivity.class)
+        IntentIntegrator intentIntegrator = new IntentIntegrator(context.getCurrentActivity())
+                .setOrientationLocked(false).setCaptureActivity(CustomScannerActivity.class)
                 .initiateScan();
         intentIntegrator.setPrompt("Pon el código de barras dentro del rectángulo de escaneo.");
         intentIntegrator.setOrientationLocked(false);
-
+        intentIntegrator.initiateScan();
     }
 
     @Override
-    public void onActivityResult(this, int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
         ReactApplicationContext context = getReactApplicationContext();
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(scanResult != null) {
@@ -60,6 +60,6 @@ public class AwesomeBarcodeScanModule extends ReactContextBaseJavaModule impleme
     }
 
     @Override
-    protected void onNewIntent(Intent intent) {
+    public void onNewIntent(Intent intent) {
+
     }
-}
