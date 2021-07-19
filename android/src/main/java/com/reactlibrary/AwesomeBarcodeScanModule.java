@@ -64,4 +64,8 @@ public class AwesomeBarcodeScanModule extends ReactContextBaseJavaModule impleme
 
     }
 
+    @Override
+    public void onActivityResult(int i, int i1, Intent intent) {
+
+    }
 }
