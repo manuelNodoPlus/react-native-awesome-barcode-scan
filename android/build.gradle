@@ -68,13 +68,15 @@ repositories {
     }
     google()
     jcenter()
+    mavenCentral()
 }
 
 dependencies {
     //noinspection GradleDynamicVersion
     implementation 'com.facebook.react:react-native:+'  // From node_modules
-    implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
+    implementation 'com.journeyapps:zxing-android-embedded:4.2.0'
     implementation 'com.google.zxing:core:3.2.1'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
 }
 
 def configureReactNativePom(def pom) {
