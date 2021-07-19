@@ -105,7 +105,7 @@ public class DecoratedBarcodeView extends FrameLayout {
         }
 
         // Pass on any preview-related attributes
-        barcodeView.initializeAttributes(attrs);
+//        barcodeView.initializeAttributes(attrs);
 
 
         viewFinder = findViewById(R.id.zxing_viewfinder_view);
