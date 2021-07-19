@@ -19,6 +19,7 @@ public class AwesomeBarcodeScanModule extends ReactContextBaseJavaModule impleme
 
     private final ReactApplicationContext reactContext;
     Promise promise;
+
     public AwesomeBarcodeScanModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this.reactContext = reactContext;
@@ -49,7 +50,7 @@ public class AwesomeBarcodeScanModule extends ReactContextBaseJavaModule impleme
     public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
         ReactApplicationContext context = getReactApplicationContext();
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if(scanResult != null) {
+        if (scanResult != null) {
             System.out.println(scanResult.toString().replaceAll("[^A-Za-z0-9_]+", " "));
 //            Log.i("SCAN", "scan result: " + scanResult.toString().replaceAll("[-!$%^&*()_+|~=`{}\\[\\]:\";'<>?,.\\/]"," ") + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaoooooooooooooooooooooo");
 
@@ -63,3 +64,4 @@ public class AwesomeBarcodeScanModule extends ReactContextBaseJavaModule impleme
     public void onNewIntent(Intent intent) {
 
     }
+}
