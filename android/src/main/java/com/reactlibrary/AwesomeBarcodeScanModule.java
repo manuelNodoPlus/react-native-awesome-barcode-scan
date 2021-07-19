@@ -59,4 +59,9 @@ public class AwesomeBarcodeScanModule extends ReactContextBaseJavaModule impleme
             Log.e("SCAN", "Sorry, the scan was unsuccessful...");
     }
 
+    @Override
+    public void onNewIntent(Intent intent) {
+
+    }
+
 }
