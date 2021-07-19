@@ -15,7 +15,7 @@ public class AwesomeBarcodeScanPackage implements ReactPackage {
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(new AwesomeBarcodeScanModule(reactContext));
     }
-    
+
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return Collections.emptyList();
