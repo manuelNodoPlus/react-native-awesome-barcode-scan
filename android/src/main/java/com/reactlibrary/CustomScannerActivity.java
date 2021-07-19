@@ -1,27 +1,23 @@
 package com.reactlibrary;
-
 import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.ToggleButton;
 
 import com.journeyapps.barcodescanner.CaptureManager;
 import com.journeyapps.barcodescanner.CompoundBarcodeView;
 
+/**
+ * Custom Scannner Activity extending from Activity to display a custom layout form scanner view.
+ */
 public class CustomScannerActivity extends Activity implements
         CompoundBarcodeView.TorchListener {
 
-    private static final int BarCodeScannerViewControllerUserCanceledErrorCode = 99991;
-
-    private static final String TAG = CustomScannerActivity.class.getSimpleName();
-
     private CaptureManager capture;
     private CompoundBarcodeView barcodeScannerView;
-    private ToggleButton switchFlashlightButton;
+    private Button switchFlashlightButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,29 +27,13 @@ public class CustomScannerActivity extends Activity implements
         barcodeScannerView = (CompoundBarcodeView)findViewById(R.id.zxing_barcode_scanner);
         barcodeScannerView.setTorchListener(this);
 
-        switchFlashlightButton = (ToggleButton) findViewById(R.id.switch_flashlight);
-
-        switchFlashlightButton.setText(null);
-        switchFlashlightButton.setTextOn(null);
-        switchFlashlightButton.setTextOff(null);
+        switchFlashlightButton = (Button)findViewById(R.id.switch_flashlight);
 
         // if the device does not have flashlight in its camera,
         // then remove the switch flashlight button...
         if (!hasFlash()) {
             switchFlashlightButton.setVisibility(View.GONE);
         }
-
-        switchFlashlightButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // Save the state here
-                if (isChecked) {
-                    barcodeScannerView.setTorchOn();
-                } else {
-                    barcodeScannerView.setTorchOff();
-                }
-            }
-        });
 
         capture = new CaptureManager(this, barcodeScannerView);
         capture.initializeFromIntent(getIntent(), savedInstanceState);
@@ -98,15 +78,22 @@ public class CustomScannerActivity extends Activity implements
                 .hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
     }
 
-    @Override
-    public void onTorchOn() {
-        // necessary override..
+    public void switchFlashlight(View view) {
+        if (getString(R.string.turn_on_flashlight).equals(switchFlashlightButton.getText())) {
+            barcodeScannerView.setTorchOn();
+        } else {
+            barcodeScannerView.setTorchOff();
+        }
     }
 
+    @Override
+    public void onTorchOn() {
+        switchFlashlightButton.setText(R.string.turn_off_flashlight);
+    }
 
     @Override
     public void onTorchOff() {
-        // necessary override..
+        switchFlashlightButton.setText(R.string.turn_on_flashlight);
     }
 
 }
